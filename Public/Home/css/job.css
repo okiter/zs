@@ -1,0 +1,31 @@
+/*======job 人才招聘======*/
+/* focus */
+.jobFocus{ height: 800px; background: url(../images/job/focus.jpg) no-repeat center center; }
+/*>>>>>>>>>>*/
+.jobColumnTitle{ color: #fff; margin-top: 35%; }
+.jobColumnTitle p{ display: block; }
+.jobColumnTitle p.en{ font: 3.8em Arial; }
+.jobColumnTitle p.cn{ font-size: 2.8em; }
+
+/* icon */
+.jobIcon_01{ background: url(../images/icon_job.png) no-repeat 0 0; }
+.jobIcon_02{ background: url(../images/icon_job.png) no-repeat 0 -102px; }
+.jobIcon_03{ background: url(../images/icon_job.png) no-repeat 0 -204px; }
+.jobIcon_04{ background: url(../images/icon_job.png) no-repeat 0 -306px; }
+.jobIcon_05{ background: url(../images/icon_job.png) no-repeat 0 -408px; }
+
+/*display*/
+.jobContentHide{ display: none; }
+
+/* main */
+.hrInfo{ margin-top: 112px; }
+.hrInfo p{ font-size: 20px; color: #585858; line-height: 30px; }
+/*>>job*/
+.jobBox{ border-bottom: 1px solid #ccc; margin: 40px 0px 160px; }
+.jobBox .listBlock{ }
+.jobBox .listBlock .jobName{ background: #333; height: 208px; border: 1px solid #ccc; cursor:pointer; }
+.jobBox .listBlock .jobName:hover{background: #4c4c4c;}
+.jobBox .listBlock .jobName h1{ color: #fff; font-size: 24px; font-weight: normal; display: block; float: left; margin: 9% 0px 0px 90px; width: 220px; text-align: left; }
+.jobBox .listBlock .jobName i{ display: block; height: 92px; width: 92px; float: left; margin: 6% 0px 0px; }
+.jobBox .listBlock .jobContent{ background: #e5e5e5; padding: 40px 90px; border-right: 1px solid #ccc; border-left: 1px solid #ccc; }
+.jobBox .listBlock .jobContent td{ font-size: 14px; color: #8e8e8e; line-height: 25px; }

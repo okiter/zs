@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>嘉馨达 - 网站管理后台登陆</title>
+<link href="css/login.css" rel="stylesheet"/>
+<link href="js/Validform/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="loginBox">
+	<!--logo-->
+	<div id="logo"></div>
+	<!--login form-->
+	<div class="form clearfix">
+		<form action="" method="post" class="loginForm">
+		<div id="inputBox">
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="right" style="width:58px;">用户名：</td>
+					<td class="left"><input type="text" name="sysuser_name" id="sysuser_name" style="width:240px;" placeholder="请输入用户名" /></td>
+				</tr>
+				<tr>
+					<td class="right">密<span style="padding-right:1em;"></span>码：</td>
+					<td class="left"><input type="password" name="sysuser_password" id="sysuser_password" style="width:240px;" placeholder="请输入登陆密码" /></td>
+				</tr>
+				<tr>
+					<td class="right">验证码：</td>
+					<td class="left">
+						<input type="text" name="sysuser_verify" id="sysuser_verify" style="width:100px;" placeholder="请输入验证码" />
+						<img src="http://usr.im/80x30" class="vimg" onClick="this.src=this.src+'?'+Math.random()" /><em style="font-size:10px;">点击图片刷新</em>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="btn">
+			<button type="submit">登<span style="padding-right: 2em;"></span>陆</button>
+		</div>
+		</form>
+	<div class="clear"></div>
+	</div>
+<div class="clear"></div>
+</div>
+
+</body>
+<script src="js/jquery.min.js?1.8.3"></script>
+<script src="js/placeMe.js"></script>
+<script>
+$(function(){
+	$('button').click(function(){
+	var sysuser_name = $('#sysuser_name').val();
+		sysuser_password = $('#sysuser_password').val();
+		sysuser_verify = $('#sysuser_verify').val();
+		if(sysuser_name==''){
+			alert('请输入用户名');
+			return false;
+		}else if(sysuser_password==''){
+			alert('请输入登陆密码');
+			return false;
+		}else if(sysuser_verify==''){
+			alert('请输入验证码');
+			return false;
+		}else{
+			return true;
+		}
+	});
+});
+</script>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__CSS__/main.css" rel="stylesheet" />
+<link rel="stylesheet" href="../plug/edit/themes/default/default.css" />
+<script charset="utf-8" src="../plug/edit/kindeditor.js"></script>
+<script charset="utf-8" src="../plug/edit/lang/zh_CN.js"></script>
+</head>
+<body>
+<!--当前位置-->
+<div class="pageCurrent" id="sidebar">
+	<strong>您的当前位置：</strong><a href="#" target="_parent">管理后台</a><span>&gt;&gt;</span>团队管理
+</div>
+<!--END 当前位置-->
+
+<div class="wrapper">
+	<!--主体-->
+	<div class="main">
+		<!--tab-->
+		<ul class="headTabs">
+			<li><a href="list.html">成员列表</a></li>
+			<li class="on"><a href="#">编辑成员</a></li>
+		</ul>
+		
+		<!--form-->
+		<div class="form">
+			<form action="" method="post">
+			<div class="tr">
+				<div class="col">成员姓名：</div>
+				<div class="td"><input type="text" id="team_name" name="team_name" value=""  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">成员职位：</div>
+				<div class="td"><input type="text" id="team_position" name="team_position" value=""  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">是否领导：</div>
+				<div class="td">
+					<input type="radio" name="team_isleader" id="team_isleader0" value="0" checked="checked" /><label for="team_isleader0">否</label>
+					<input type="radio" name="team_isleader" id="team_isleader1" value="1" /><label for="team_isleader1">是</label>
+				</div>
+			</div>
+			
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">成员照片：</div>
+				<div class="td"><img src="http://usr.im/100x76" id="photoimg" class="img1" style="width:100px; height:76px;" /></div>
+			</div>
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<input name="team_photo" type="hidden" class="add" id="team_photo" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="photo_btn">选择图片</button><span class="helpBlock">图片尺寸 宽：490像素，高：370像素</span>
+				</div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">成员简介：</div>
+				<div class="td"><textarea id="team_shortintroduce" name="team_shortintroduce" class="text" style="width:500px; height:200px;"></textarea></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">成员详情：</div>
+				<div class="td"><textarea id="team_introduce" name="team_introduce"></textarea></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">成员作品：</div>
+				<div class="td"><span class="helpBlock">作品图片，建议尺寸：980x564</span><textarea id="team_works" name="team_works"></textarea></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<button type="submit" class="btn2">保<span style="padding-right:2em;"></span>存</button><span id="msg"></span>
+				</div>
+			</div>
+			</form>
+		<div class="clear"></div>
+		</div>
+		<!--END form-->
+	<div class="clear"></div>
+	</div>
+	<!--END 主体-->
+<div class="clear"></div>
+</div>
+</body>
+<script src="__JS__/jquery.min.js?1.8.3"></script>
+<script src="__JS__/common.js"></script>
+<script src="__JS__/portamento-min.js"></script>
+<script>
+$(function(){
+	$('button').click(function(){
+		var team_name = $('#team_name').val();
+			team_position = $('#team_position').val();
+			team_photo = $('#team_photo').val();
+			team_shortintroduce = $('#team_shortintroduce').val();
+		if(team_name==''){
+			alert('请输入成员姓名');
+			return false;
+		}else if(team_position==''){
+			alert('请输入成员职位');
+			return false;
+		}else if(team_photo==''){
+			alert('请上传成员照片');
+			return false;
+		}else if(team_shortintroduce==''){
+			alert('请输入成员简介');
+			return false;
+		}else {
+			return true;
+		}
+	});
+});
+
+KindEditor.ready(function(K) {
+	var thumbnail = K.editor({
+		basePath: '../plugPublic/edit/'
+		,uploadJson : '../plugfileup/upload_json.php?m=article&imageDir=thumbnail&fileSize=1'
+		,uploadDir : 'thumbnail'	//图片保存目录名 get参数 carData=>模型名 imageDir => 图片保存目录 fileSize => 允许上传的文件大小
+		,fileManagerJson : '../plug/fileup/file_manager_json.php?m=article&imageDir=thumbnail'
+		,uploadDirName : 'thumbnail'
+		,allowFileManager:true
+	});
+	
+	//栏目推荐图片
+	K('#photo_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#team_photo').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#team_photo').val(url);
+					K('#photoimg').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+	
+	//成员详情
+	var editor = K.create('textarea[name="team_introduce"]',{
+		width : '750px'
+		,height: '500px'
+		,items:[
+        		'source', '|', 'undo', 'redo', '|', 'preview', 'template', 'cut', 'copy', 'paste',
+        		'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        		'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        		'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+        		'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        		'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+        		'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+        		'anchor', 'link', 'unlink'
+		]
+		,filterMode:true //是否过滤html代码
+		,wellFormatMode:true //是否美化html代码
+		,basePath: '../plug/edit/'
+		,uploadJson : '../plug/fileup/upload_json.php?m=groupon&imageDir=details&fileSize=1'
+		,uploadDir : 'details'	//图片保存目录名 get参数 carData=>模型名 imageDir => 图片保存目录 fileSize => 允许上传的文件大小
+		,fileManagerJson : '../plug/fileup/file_manager_json.php?m=groupon&imageDir=details'
+		,uploadDirName : 'details'
+		,allowFileManager:true
+		
+		//将编辑器中的内容同步到文本域
+		,afterChange:function(){ //内容发生变化后
+			this.sync();
+		}			
+		,afterFocus:function(){ //得到焦点时
+			this.sync();
+		}			
+		,afterBlur: function(){ //失去焦点时
+			this.sync();
+		}			
+	});
+	editor.sync();
+	
+	//成员作品
+	var editor = K.create('textarea[name="team_works"]',{
+		width : '750px'
+		,height: '500px'
+		,items:[
+        		'source', '|', 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'image', 'multiimage', '|', 'fullscreen',
+		]
+		,filterMode:true //是否过滤html代码
+		,wellFormatMode:true //是否美化html代码
+		,basePath: '../plug/edit/'
+		,uploadJson : '../plug/fileup/upload_json.php?m=groupon&imageDir=details&fileSize=1'
+		,uploadDir : 'details'	//图片保存目录名 get参数 carData=>模型名 imageDir => 图片保存目录 fileSize => 允许上传的文件大小
+		,fileManagerJson : '../plug/fileup/file_manager_json.php?m=groupon&imageDir=details'
+		,uploadDirName : 'details'
+		,allowFileManager:true
+		
+		//将编辑器中的内容同步到文本域
+		,afterChange:function(){ //内容发生变化后
+			this.sync();
+		}			
+		,afterFocus:function(){ //得到焦点时
+			this.sync();
+		}			
+		,afterBlur: function(){ //失去焦点时
+			this.sync();
+		}			
+	});
+	editor.sync();
+});
+</script>
+</html>

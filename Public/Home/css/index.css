@@ -1,0 +1,65 @@
+/*======index======*/
+/* focus */
+.indexFocus{ height: 800px; overflow: hidden; }
+
+/* fast channel快速通道 */
+.fastChannel{ height: 300px;}
+	.query{ float: left; width: 50%;background: #000; color: #fff; } /*快速查询*/
+	.query .box{ float: right; width: 412px; }
+	.query .box button{ float: left; height: 113px; width: 113px; margin-top: 93px; background: url(../images/icon_001.png) no-repeat center center; height: 113px; width: 113px; display: block; }
+	.query .box .form{ float: left; margin: 120px 0px 0px 45px; }
+	.query .box .form label{ display: block; font-size: 1.7em; margin-bottom:5px; }
+	.query .box .form input{ background: #000; border: 1px solid #6b6b6b; height: 25px; width: 138px; color: #6b6b6b; }
+	.reservation{ float: right; width: 50%;background: #fff; color: #fff; } /*预约*/
+	.reservation .box{ float: left; background: url(../images/icon_002.png) no-repeat left center; margin-left: 112px; width: 300px; }
+	.reservation .box a{ display: inline-block; float: left; height: 115px; width: 115px; margin-top: 92px; }
+	.reservation .box .text{ float: left; margin: 120px 0px 0px 40px; color: #000; }
+	.reservation .box .text p.title{ font-size: 1.7em; margin-bottom: 6px; }
+	.reservation .box .text p.subTitle{}
+
+/* case */
+.indexCase{ height: 600px; }
+.indexCase{width:100%;position:relative;overflow:hidden;}
+.indexCase .caseBlock{z-index:1;/*white-space:nowrap;*/width:100%;height:600px}
+.indexCase .caseBlock li{ position: relative; display: block; width: 100%; height: 600px; overflow: hidden }
+.indexCase .prev,
+.indexCase .next{position:absolute;z-index:100;display:block}
+.indexCase .prev{top:50%;left:10px}
+.indexCase .next{top:50%;right:10px}
+.indexCase .prev a,
+.indexCase .next a{display:block;width:25px;height:32px;overflow:hidden;background:url(../images/ico_prevnext.png) no-repeat scroll 0 0;_background-image:url(../images/ico_prevnext_ie6.png)}
+.indexCase .prev a{background-position:0 0}
+.indexCase .prev a:hover{background-position:0 -40px}
+.indexCase .next a{background-position:0 -80px}
+.indexCase .next a:hover{background-position:0 -120px}
+
+.indexCase .leftBox,.rightBox {width:50%;height:600px; float:left;}
+.indexCase .leftBox img,
+.indexCase .rightBox img{ width: 100%; height: 600px; display:block; }
+.indexCase .leftBox .contentBlock{ width: 196px; background: #fff; height: 412px; position: relative; bottom: 600px; left: 71%; padding: 178px 40px 0px; }
+.indexCase .leftBox .contentBlock dl{ width: 195px;display:block;}
+.indexCase .leftBox .contentBlock dl dt{ display: block; line-height: 24px; }
+.indexCase .leftBox .contentBlock dl dt p.enTag{ color: #8f8f8f; font: 12px Arial; }
+.indexCase .leftBox .contentBlock dl dt p.cnTag{ font-size: 16px; }
+.indexCase .leftBox .contentBlock dl dd{ font-size: 12px; line-height: 22px; margin-top: 20px; display: block; color: #5c5c5c; }
+.indexCase .leftBox .contentBlock .more{ text-align: right; margin-top: 80px; }
+
+.indexCase .rightBox .transparentBg{ width: 100%; height: 600px; background: #000; filter: alpha(opacity=60); -moz-opacity: 0.6; opacity: 0.6; transition: all 0.3s linear; position: relative; z-index: 10; top: -600px; }
+.indexCase .rightBox .transparentBg:hover{filter:alpha(opacity=0);-moz-opacity:0;opacity:0;}
+
+/* other block */
+.indexOther{ background: #fff; }
+/*>> 最新活动*/
+.indexOther .newActivity{ width: 980px; margin: 130px auto 160px; }
+.indexOther .newActivity .columnTitle{ height: 40px; }
+.indexOther .newActivity .columnTitle h3{ font-size: 2.57em; float: left; display: inline-block; font-weight: normal; }
+.indexOther .newActivity .columnTitle .more{ display: inline-block; float: right; font: 12px Verdana, Geneva, sans-serif; margin-top: 26px; }
+.indexOther .newActivity ul{ display: block; margin-top:90px; }
+.indexOther .newActivity ul li{ display: block; width: 312px; float: left; margin-left: 20px; }
+.indexOther .newActivity ul li:first-child{margin-left: 0px;}
+.indexOther .newActivity ul li img{ width: 312px; height: 234px; margin-bottom: 50px; }
+.indexOther .newActivity ul li p.title{ line-height: 22px; }
+.indexOther .newActivity ul li p.summary{ color: #7b7b7b; font-size: 12px; line-height: 22px; }
+.indexOther .newActivity ul li a:hover,
+.indexOther .newActivity ul li a:hover p.title,
+.indexOther .newActivity ul li a:hover p.summary{ color: #b3b3b3; text-decoration: none; }

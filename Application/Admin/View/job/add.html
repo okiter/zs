@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__CSS__/main.css" rel="stylesheet" />
+<link href="__CSS__/job.css" rel="stylesheet" />
+<link rel="stylesheet" href="../plug/edit/themes/default/default.css" />
+<script charset="utf-8" src="../plug/edit/kindeditor.js"></script>
+<script charset="utf-8" src="../plug/edit/lang/zh_CN.js"></script>
+</head>
+<body>
+<!--当前位置-->
+<div class="pageCurrent" id="sidebar">
+	<strong>您的当前位置：</strong><a href="#" target="_parent">管理后台</a><span>&gt;&gt;</span>招聘管理
+</div>
+<!--END 当前位置-->
+
+<div class="wrapper">
+	<!--主体-->
+	<div class="main">
+		<!--tab-->
+		<ul class="headTabs">
+			<li><a href="list.html">招聘列表</a></li>
+			<li class="on"><a href="#">添加招聘</a></li>
+		</ul>
+		
+		<!--form-->
+		<div class="form">
+			<form action="" method="post">
+			<div class="tr">
+				<div class="col">招聘职位：</div>
+				<div class="td"><input type="text" id="job_position" name="job_position" value=""  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">职位图标：</div>
+				<div class="td">
+					<div class="iconBox" style="float:left;"><i></i></div>
+				</div>
+			<div class="clear"></div>
+			</div>
+			<div class="tr">
+				<div class="col" style="width:4em;"></div>
+				<div class="td">
+					<select name="job_icon" id="job_icon" class="text">
+						<option value="0">请选择</option>
+						<option value="jobIcon_01">01</option>
+						<option value="jobIcon_02">02</option>
+						<option value="jobIcon_03">03</option>
+						<option value="jobIcon_04">04</option>
+						<option value="jobIcon_05">05</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">招聘详情：</div>
+				<div class="td">
+					<span class="helpBlock">请在表格区域内进行编辑，换行请使用 Shift+Enter 组合键！</span>
+					<textarea id="team_introduce" name="team_introduce">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td valign="top">
+									岗位职责：<br />
+								</td>
+								<td style="width:100px;">&nbsp;</td>
+								<td valign="top">
+									岗位职责：<br />
+								</td>
+							</tr>
+						</table>
+					</textarea>
+				</div>
+			</div>
+			
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<button type="submit" class="btn2">保<span style="padding-right:2em;"></span>存</button><span id="msg"></span>
+				</div>
+			</div>
+			</form>
+		<div class="clear"></div>
+		</div>
+		<!--END form-->
+	<div class="clear"></div>
+	</div>
+	<!--END 主体-->
+<div class="clear"></div>
+</div>
+</body>
+<script src="__JS__/jquery.min.js?1.8.3"></script>
+<script src="__JS__/common.js"></script>
+<script src="__JS__/portamento-min.js"></script>
+<script>
+$(function(){
+	$('button').click(function(){
+		var job_position = $('#job_position').val();
+			job_icon = $('#job_icon').val();
+		if(job_position==''){
+			alert('请输入招聘职位');
+			return false;
+		}else if(job_icon==0){
+			alert('请选择招聘图标');
+			return false;
+		}else{
+			return true;
+		}
+	});
+	
+	$('#job_icon').change(function(){
+		if($(this).val()!=0){
+			$('.iconBox').find('i').attr('class',$(this).val());
+		}else{
+			$('.iconBox').find('i').removeAttr('class');
+		}
+	});
+});
+
+KindEditor.ready(function(K) {
+	
+	//成员详情
+	var editor = K.create('textarea[name="team_introduce"]',{
+		width : '750px'
+		,height: '500px'
+		,items:[
+        		/*'source', '|',*/ 'undo', 'redo', '|', 'preview', 'template', 'cut', 'copy', 'paste',
+        		'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        		'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        		'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+        		'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        		'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+        		'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+        		'anchor', 'link', 'unlink'
+		]
+		,filterMode:true //是否过滤html代码
+		,wellFormatMode:true //是否美化html代码
+		,basePath: '../plug/edit/'
+		,uploadJson : '../plug/fileup/upload_json.php?m=groupon&imageDir=details&fileSize=1'
+		,uploadDir : 'details'	//图片保存目录名 get参数 carData=>模型名 imageDir => 图片保存目录 fileSize => 允许上传的文件大小
+		,fileManagerJson : '../plug/fileup/file_manager_json.php?m=groupon&imageDir=details'
+		,uploadDirName : 'details'
+		,allowFileManager:true
+		
+		//将编辑器中的内容同步到文本域
+		,afterChange:function(){ //内容发生变化后
+			this.sync();
+		}			
+		,afterFocus:function(){ //得到焦点时
+			this.sync();
+		}			
+		,afterBlur: function(){ //失去焦点时
+			this.sync();
+		}			
+	});
+	editor.sync();
+});
+</script>
+</html>

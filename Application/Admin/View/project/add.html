@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__CSS__/main.css" rel="stylesheet" />
+<link rel="stylesheet" href="../plug/edit/themes/default/default.css" />
+<script charset="utf-8" src="../plug/edit/kindeditor.js"></script>
+<script charset="utf-8" src="../plug/edit/lang/zh_CN.js"></script>
+</head>
+<body>
+<!--当前位置-->
+<div class="pageCurrent" id="sidebar">
+	<strong>您的当前位置：</strong><a href="#" target="_parent">管理后台</a><span>&gt;&gt;</span>项目管理
+</div>
+<!--END 当前位置-->
+
+<div class="wrapper">
+	<!--主体-->
+	<div class="main">
+		<!--tab-->
+		<ul class="headTabs">
+			<li><a href="list.html">项目列表</a></li>
+			<li class="on"><a href="#">添加项目</a></li>
+		</ul>
+		
+		<!--form-->
+		<div class="form">
+			<form action="" method="post">
+			<div class="tr">
+				<div class="col">项目名称：</div>
+				<div class="td"><input type="text" id="project_name" name="project_name" value=""  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">项目子标题：</div>
+				<div class="td"><input type="text" id="project_subtitle" name="project_subtitle" value=""  class="text" style="width:300px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">客户姓名：</div>
+				<div class="td"><input type="text" id="project_customername" name="project_customername" value=""  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">客户手机：</div>
+				<div class="td"><input type="text" id="project_customermobile" name="project_customermobile" value=""  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">项目进度：</div>
+				<div class="td"><input name="project_progress" type="text"  class="text" id="project_progress" style="width:60px;" value="0" maxlength="3" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" /> %</div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">现场组图：</div>
+				<div class="td"><span class="helpBlock">现场组图，建议尺寸：980x564</span><textarea id="project_pics" name="project_pics"></textarea></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<button type="submit" class="btn2">保<span style="padding-right:2em;"></span>存</button><span id="msg"></span>
+				</div>
+			</div>
+			</form>
+		<div class="clear"></div>
+		</div>
+		<!--END form-->
+	<div class="clear"></div>
+	</div>
+	<!--END 主体-->
+<div class="clear"></div>
+</div>
+</body>
+<script src="__JS__/jquery.min.js?1.8.3"></script>
+<script src="__JS__/common.js"></script>
+<script src="__JS__/portamento-min.js"></script>
+<script>
+$(function(){
+	$('button').click(function(){
+		var project_name = $('#project_name').val();
+			project_subtitle = $('#project_subtitle').val();
+			project_customername = $('#project_customername').val();
+			project_customermobile = $('#project_customermobile').val();
+		var nameReg = /^([\u4e00-\u9fa5]+|([a-z]+\s?)+)$/;
+			mobileReg = /^1[3-9]\d{9}$/;
+		if(project_name==''){
+			alert('请输入项目名称');
+			return false;
+		}else if(project_subtitle==''){
+			alert('请输入项目子标题');
+			return false;
+		}else if(project_customername==''){
+			alert('请输入客户姓名');
+			return false;
+		}else if(project_customername!='' && !nameReg.test(project_customername)){
+			alert('您输入的客户姓名不正确，请重新输入');
+			return false;
+		}else if(project_customermobile==''){
+			alert('请输入客户手机');
+			return false;
+		}else  if(project_customermobile!='' && !mobileReg.test(project_customermobile)){
+			alert('您输入的客户手机不正确，请重新输入');
+			return false;
+		}else {
+			return true;
+		}
+	});
+});
+
+KindEditor.ready(function(K) {
+	//项目现场组图
+	var editor = K.create('textarea[name="project_pics"]',{
+		width : '750px'
+		,height: '500px'
+		,items:[
+        		'source', '|', 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'image', 'multiimage', '|', 'fullscreen',
+		]
+		,filterMode:true //是否过滤html代码
+		,wellFormatMode:true //是否美化html代码
+		,basePath: '../plug/edit/'
+		,uploadJson : '../plug/fileup/upload_json.php?m=groupon&imageDir=details&fileSize=1'
+		,uploadDir : 'details'	//图片保存目录名 get参数 carData=>模型名 imageDir => 图片保存目录 fileSize => 允许上传的文件大小
+		,fileManagerJson : '../plug/fileup/file_manager_json.php?m=groupon&imageDir=details'
+		,uploadDirName : 'details'
+		,allowFileManager:true
+		
+		//将编辑器中的内容同步到文本域
+		,afterChange:function(){ //内容发生变化后
+			this.sync();
+		}			
+		,afterFocus:function(){ //得到焦点时
+			this.sync();
+		}			
+		,afterBlur: function(){ //失去焦点时
+			this.sync();
+		}			
+	});
+	editor.sync();
+});
+</script>
+</html>

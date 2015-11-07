@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__CSS__/main.css" rel="stylesheet" />
+</head>
+<body>
+<!--当前位置-->
+<div class="pageCurrent" id="sidebar">
+	<strong>您的当前位置：</strong><a href="#" target="_parent">管理后台</a><span>&gt;&gt;</span>系统设置<span>&gt;&gt;</span>联系方式
+</div>
+<!--END 当前位置-->
+
+<div class="wrapper">
+	<!--主体-->
+	<div class="main">
+		<!--tab-->
+		<ul class="headTabs">
+			<li class="on"><a href="#">基本设置</a></li>
+		</ul>
+		
+		<!--form-->
+		<div class="form">
+			<form action="" method="post">
+			<div class="tr">
+				<div class="col">联系电话：</div>
+				<div class="td"><input type="text" id="sysconfig_contact_tel" name="sysconfig_contact_tel" value="{$sysconfig_contact_tel}"  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">公司邮箱：</div>
+				<div class="td"><input type="text" id="sysconfig_contact_email" name="sysconfig_contact_email" value="{$sysconfig_contact_email}"  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">公司地址：</div>
+				<div class="td"><input type="text" id="sysconfig_contact_address" name="sysconfig_contact_address" value="{$sysconfig_contact_address}"  class="text" style="width:300px;" /></div>
+			</div>
+			
+			<div class="line"></div>
+			
+			<div class="tr">
+				<div class="col">人事电话：</div>
+				<div class="td"><input type="text" id="sysconfig_contact_jobtel" name="sysconfig_contact_jobtel" value="{$sysconfig_contact_jobtel}"  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">人事邮箱：</div>
+				<div class="td"><input type="text" id="sysconfig_contact_jobemail" name="sysconfig_contact_jobemail" value="{$sysconfig_contact_jobemail}"  class="text" style="width:200px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<button type="submit" class="btn2">保<span style="padding-right:2em;"></span>存</button>
+				</div>
+			</div>
+			</form>
+		<div class="clear"></div>
+		</div>
+		<!--END form-->
+	<div class="clear"></div>
+	</div>
+	<!--END 主体-->
+<div class="clear"></div>
+</div>
+</body>
+<script src="__JS__/jquery.min.js?1.8.3"></script>
+<script src="__JS__/common.js"></script>
+<script src="__JS__/portamento-min.js"></script>
+<script>
+$(function(){
+	$('button').click(function(){
+		var sysconfig_contact_tel = $('#sysconfig_contact_tel').val();
+			sysconfig_contact_jobtel = $('#sysconfig_contact_jobtel').val();
+			sysconfig_contact_email = $('#sysconfig_contact_email').val();
+			sysconfig_contact_jobemail = $('#sysconfig_contact_jobemail').val();
+			mailReg = /^[\w\+\-]+(\.[\w\+\-]+)*@[a-z\d\-]+(\.[a-z\d\-]+)*\.([a-z]{2,4})$/i;
+			//telReg = /^(d{3,4})-(d{7,8})/;
+			//mobileReg = /^1[3-9]\d{9}$/;
+		/*if(sysconfig_contact_tel!=''){
+			if(!telReg.test(sysconfig_contact_tel)||!mobileReg.test(sysconfig_contact_tel)){
+				alert('请填写固定电话号码或者手机号码，如13800138000或者028-81234567');
+				return false;
+			}else{
+				return true;
+			}
+		}*/
+		
+		if(sysconfig_contact_email!=''){
+			if(!mailReg.test(sysconfig_contact_email)){
+				alert('请填写正确的邮箱地址');
+				return false;
+			}
+		}
+		
+		if(sysconfig_contact_jobemail!=''){
+			if(!mailReg.test(sysconfig_contact_jobemail)){
+				alert('请填写正确的邮箱地址');
+				return false;
+			}
+		}
+	});
+});
+</script>
+</html>

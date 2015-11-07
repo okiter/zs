@@ -1,0 +1,42 @@
+/*======about 关于我们======*/
+/* focus */
+.aboutFocus{ height: 800px; background: url(../images/about/focus.jpg) no-repeat center center; }
+/*>>>>>>>>>>*/
+.aboutColumnTitle{ color: #fff; margin-top: 35%; }
+.aboutColumnTitle p{ display: block; }
+.aboutColumnTitle p.en{ font: 3.8em Arial; }
+.aboutColumnTitle p.cn{ font-size: 2.8em; }
+
+/* 公司简介 */
+/*>>简介*/
+.aboutDescription{ margin-top: 115px; color: #575354; font-size: 16px; }
+.aboutDescription img{ margin-right: 32px; }
+.aboutDescription p{ line-height: 40px; margin-bottom: 40px; text-indent: 2em; }
+/*>>宗旨*/
+.aboutTenet{ display: block; text-align: center; margin-bottom: 100px; }
+.aboutTenet dt{ font-size: 36px; padding-bottom: 20px; color: #888; }
+.aboutTenet dd{ font-size: 26px; color: #a5a5a5; }
+.aboutTenet dd span.line{ width: 200px; border-bottom: 1px solid #aaa; display: block; height: 1px; margin: 20px 0px 20px 39%; }
+
+/* team 团队 */
+.teamColumnTitle{ margin-top: 50px; }
+.teamColumnTitle p{ color: #2c2c2c; display: block; }
+.teamColumnTitle p.en{ font-size: 3.5em; }
+.teamColumnTitle p.cn{ font-size: 36px; }
+/*>>>>>>>>>>*/
+.teamBlock{ margin-top: 38px; min-height: 371px; height:auto; }
+.teamBlock .lead{ height: 370px; }
+.teamBlock .lead img{ float: left; display: block; height: 370px; width: 490px; }
+.teamBlock .lead .right{ background: #f2f2f2; height: 292px; width: 400px; float: left; padding: 58px 45px 20px; }
+.teamBlock .lead .right h3{ font-size: 30px; color: #535353; font-weight: normal; border-bottom: 1px solid #aaa9a9; padding-bottom: 10px; }
+.teamBlock .lead .right h3 span{ font-size: 18px; padding-left: 15px; }
+.teamBlock .lead .right p.info{ color: #999; font-size: 18px; line-height: 35px; margin-top: 20px; }
+/*>>>>>>>>>>*/
+.teamBlock .list{}
+.teamBlock .list li{ margin-top: 30px; float: left; width: 490px; height: 740px; display: block; }
+.teamBlock .list li a{ text-decoration: none; }
+.teamBlock .list li img{ height: 370px; width: 490px; display: block; }
+.teamBlock .list li .info{ height: 292px; width: 400px; background: #f2f2f2; padding: 58px 45px 20px;}
+.teamBlock .list li .info h3{ font-size: 30px; color: #535353; font-weight: normal; border-bottom: 1px solid #aaa9a9; padding-bottom: 10px; }
+.teamBlock .list li .info h3 span{ font-size: 18px; padding-left: 15px; }
+.teamBlock .list li .info p{ color: #999; font-size: 18px; line-height: 35px; margin-top: 20px;}

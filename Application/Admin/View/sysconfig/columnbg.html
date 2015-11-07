@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__CSS__/main.css" rel="stylesheet" />
+<link rel="stylesheet" href="../plug/edit/themes/default/default.css" />
+<script charset="utf-8" src="../plug/edit/kindeditor.js"></script>
+<script charset="utf-8" src="../plug/edit/lang/zh_CN.js"></script>
+</head>
+<body>
+<!--当前位置-->
+<div class="pageCurrent" id="sidebar">
+	<strong>您的当前位置：</strong><a href="#" target="_parent">管理后台</a><span>&gt;&gt;</span>系统设置<span>&gt;&gt;</span>栏目背景
+</div>
+<!--END 当前位置-->
+
+<div class="wrapper">
+	<!--主体-->
+	<div class="main">
+		<!--tab-->
+		<ul class="headTabs">
+			<li class="on"><a href="#">栏目背景</a></li>
+		</ul>
+		
+		<!--form-->
+		<div class="form">
+			<form action="" method="post">
+			<!--案例展示-->
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">案例展示：</div>
+				<div class="td"><img src="http://usr.im/300x125" id="caseimg" class="img1" style="width:300px; height:125px;" /></div>
+			</div>
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<input name="columnbg_case" type="hidden" class="add" id="columnbg_case" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="case_btn">选择图片</button>
+					<button type="submit" class="btn3" value="case_bg">保<span style="padding-right:2em;"></span>存</button>
+					<p><span class="helpBlock">图片尺寸 宽：1920像素，高：800像素</span></p>
+				</div>
+			</div>
+			
+			<!--工艺展示-->
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">工艺展示：</div>
+				<div class="td"><img src="http://usr.im/300x125" id="gongyiimg" class="img1" style="width:300px; height:125px;" /></div>
+			</div>
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<input name="columnbg_gongyi" type="hidden" class="add" id="columnbg_gongyi" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="gongyi_btn">选择图片</button>
+					<button type="submit" class="btn3" value="gongyi_bg">保<span style="padding-right:2em;"></span>存</button>
+					<p><span class="helpBlock">图片尺寸 宽：1920像素，高：800像素</span></p>
+				</div>
+			</div>
+			
+			<!--最新活动-->
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">最新活动：</div>
+				<div class="td"><img src="http://usr.im/300x125" id="activityimg" class="img1" style="width:300px; height:125px;" /></div>
+			</div>
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<input name="columnbg_activity" type="hidden" class="add" id="columnbg_activity" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="activity_btn">选择图片</button>
+					<button type="submit" class="btn3" value="activity_bg">保<span style="padding-right:2em;"></span>存</button>
+					<p><span class="helpBlock">图片尺寸 宽：1920像素，高：800像素</span></p>
+				</div>
+			</div>
+			
+			<!--进度查询-->
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">进度查询：</div>
+				<div class="td"><img src="http://usr.im/300x125" id="progressimg" class="img1" style="width:300px; height:125px;" /></div>
+			</div>
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<input name="columnbg_progress" type="hidden" class="add" id="columnbg_progress" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="progress_btn">选择图片</button>
+					<button type="submit" class="btn3" value="progress_bg">保<span style="padding-right:2em;"></span>存</button>
+					<p><span class="helpBlock">图片尺寸 宽：1920像素，高：800像素</span></p>
+				</div>
+			</div>
+			
+			<!--关于我们-->
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">关于我们：</div>
+				<div class="td"><img src="http://usr.im/300x125" id="aboutimg" class="img1" style="width:300px; height:125px;" /></div>
+			</div>
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<input name="columnbg_about" type="hidden" class="add" id="columnbg_about" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="about_btn">选择图片</button>
+					<button type="submit" class="btn3" value="about_bg">保<span style="padding-right:2em;"></span>存</button>
+					<p><span class="helpBlock">图片尺寸 宽：1920像素，高：800像素</span></p>
+				</div>
+			</div>
+			
+			<!--人才招聘-->
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">人才招聘：</div>
+				<div class="td"><img src="http://usr.im/300x125" id="picurl" class="img1" style="width:300px; height:125px;" /></div>
+			</div>
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<input name="columnbg_job" type="hidden" class="add" id="columnbg_job" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="job_btn">选择图片</button>
+					<button type="submit" class="btn3" value="job_bg">保<span style="padding-right:2em;"></span>存</button>
+					<p><span class="helpBlock">图片尺寸 宽：1920像素，高：800像素</span></p>
+				</div>
+			</div>
+			
+			<!--联系我们-->
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col">联系我们：</div>
+				<div class="td"><img src="http://usr.im/300x125" id="picurl" class="img1" style="width:300px; height:125px;" /></div>
+			</div>
+			<div class="tr" style="margin-bottom:5px;">
+				<div class="col"></div>
+				<div class="td">
+					<input name="columnbg_contact" type="hidden" class="add" id="columnbg_contact" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="contact_btn">选择图片</button>
+					<button type="submit" class="btn3" value="contact_bg">保<span style="padding-right:2em;"></span>存</button>
+					<p><span class="helpBlock">图片尺寸 宽：1920像素，高：800像素</span></p>
+				</div>
+			</div>
+			</form>
+		<div class="clear"></div>
+		</div>
+		<!--END form-->
+	<div class="clear"></div>
+	</div>
+	<!--END 主体-->
+<div class="clear"></div>
+</div>
+</body>
+<script src="__JS__/jquery.min.js?1.8.3"></script>
+<script src="__JS__/common.js"></script>
+<script src="__JS__/portamento-min.js"></script>
+<script>
+KindEditor.ready(function(K) {
+	var thumbnail = K.editor({
+		basePath: '../plugPublic/edit/'
+		,uploadJson : '../plugfileup/upload_json.php?m=article&imageDir=thumbnail&fileSize=1'
+		,uploadDir : 'thumbnail'	//图片保存目录名 get参数 carData=>模型名 imageDir => 图片保存目录 fileSize => 允许上传的文件大小
+		,fileManagerJson : '../plug/fileup/file_manager_json.php?m=article&imageDir=thumbnail'
+		,uploadDirName : 'thumbnail'
+		,allowFileManager:true
+	});
+	
+	//案例展示
+	K('#case_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#columnbg_case').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#columnbg_case').val(url);
+					K('#caseimg').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+	
+	//工艺展示
+	K('#gongyi_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#columnbg_gongyi').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#columnbg_gongyi').val(url);
+					K('#gongyiimg').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+	
+	//最新活动
+	K('#activity_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#columnbg_activity').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#columnbg_activity').val(url);
+					K('#activityimg').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+	
+	//进度查询
+	K('#progress_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#columnbg_progress').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#columnbg_progress').val(url);
+					K('#progressimg').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+	
+	//关于我们
+	K('#about_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#columnbg_about').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#columnbg_about').val(url);
+					K('#aboutimg').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+	
+	//人才招聘
+	K('#job_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#columnbg_job').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#columnbg_job').val(url);
+					K('#jobimg').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+	
+	//联系我们
+	K('#contact_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#columnbg_contact').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#columnbg_contact').val(url);
+					K('#contactimg').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+});
+</script>
+</html>

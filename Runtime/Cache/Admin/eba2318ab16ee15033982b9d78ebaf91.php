@@ -1,0 +1,89 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><?php echo ($title); ?></title>
+<link href="http://www.zs.com/Public/Admin/css/main.css" rel="stylesheet" />
+<style>
+#index>table{ background: #fff; border-top: 1px solid #ccc; border-right: 1px solid #ccc; }
+#index>table tr{ line-height: 40px; }
+#index>table tr td{ padding: 5px; text-align: left; border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+#index>table tr td.left{ width: 150px; }
+#index>h1{ margin: 0px 0px 10px; padding: 0px; font-size: 20px; }
+</style>
+</head>
+<body>
+<!--当前位置-->
+<div class="pageCurrent" id="sidebar">
+	<strong>您的当前位置：</strong><a href="#">管理后台</a><span>&gt;&gt;</span>首页
+</div>
+
+<div class="wrapper">
+	<div class="main" id="index">
+		<h1>服务器信息</h1>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="left">服务器操作系统：</td>
+				<td><?php echo PHP_OS; ?></td>
+				<td class="left">WEB解释引擎：</td>
+				<td><?php echo $_SERVER['SERVER_SOFTWARE']; ?></td>
+			</tr>
+			<tr>
+				<td class="left">服务器IP：</td>
+				<td><?php echo $_SERVER['REMOTE_ADDR'].':'.$_SERVER['SERVER_PORT']; ?></td>
+				<td class="left">网站域名：</td>
+				<td><?php echo $_SERVER['SERVER_NAME']; ?></td>
+			</tr>
+			<tr>
+				<td class="left">时区：</td>
+				<td><?php echo date_default_timezone_get(); ?></td>
+				<td class="left">服务器时间：</td>
+				<td><?php echo date('Y-m-d H:i:s',time()); ?></td>
+			</tr>
+			<tr>
+				<td class="left">PHP版本：</td>
+				<td><?php echo PHP_VERSION; ?></td>
+				<td class="left">MySQL：</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="left">安全模式：</td>
+				<td><?php echo get_cfg_var("safe_mode")?'<font color="green">√</font>' : '<font color="red">×</font>'; ?></td>
+				<td class="left">GD库支持：</td>
+				<td>
+					<?php if(function_exists(gd_info)) { $gd_info = @gd_info(); echo $gd_info["GD Version"]; }else{ echo '<font color="red">×</font>'; } ?>
+				</td>
+			</tr>
+		</table>
+		
+		<h1 style="margin-top:10px;">软件信息</h1>
+		
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="left">软件名称：</td>
+				<td><?php echo ($sys_info["soft_name"]); ?></td>
+				<td class="left">软件版本：</td>
+				<td><?php echo ($sys_info["soft_ver"]); ?>（爱车购专版）</td>
+			</tr>
+			<tr>
+				<td class="left">内核版本：</td>
+				<td><?php echo (THINK_VERSION); ?></td>
+				<td class="left">软件开发：</td>
+				<td><?php echo ($sys_info["soft_develop"]); ?></td>
+			</tr>
+			<tr>
+				<td class="left">开发商网站：</td>
+				<td><a href="http://<?php echo ($sys_info["soft_url"]); ?>" target="_blank"><?php echo ($sys_info["soft_url"]); ?></a></td>
+				<td class="left">联系方式：</td>
+				<td>邮箱：<a href="mailto:<?php echo ($sys_info["soft_mail"]); ?>"><?php echo ($sys_info["soft_mail"]); ?></a><span style="padding-right:1em;">&nbsp;</span>电话：<?php echo ($sys_info["soft_tel"]); ?></td>
+			</tr>
+		</table>
+	<div class="clear"></div>
+	</div>
+<div class="clear"></div>
+</div>
+</body>
+<script src="js/jquery.min.js?1.8.3"></script>
+<script src="js/common.js"></script>
+<script src="js/portamento-min.js"></script>
+</html>

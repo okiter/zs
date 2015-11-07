@@ -1,0 +1,128 @@
+/*======case======*/
+/* focus */
+.caseFocus{ height: 800px; }
+.caseFocus .columnNavBlock{ height: 445px; margin-top: 355px; }
+.caseFocus .columnNavBlock .left,
+.caseFocus .columnNavBlock .right{width:50%;height: 445px; float:left;}
+.caseFocus .columnNavBlock .left .box,
+.caseFocus .columnNavBlock .right .box{width:480px;height: 445px;}
+.caseFocus .columnNavBlock .left .box .columnTitle,
+.caseFocus .columnNavBlock .right .box .columnAllLink{ color: #fff; height: 92px; }
+/* 20141022 为了适应下拉菜单新增样式 */
+.caseFocus .columnNavBlock .right .box .columnAllLink ul{ width: 180px; float: right; height: 32px; display: block; margin-top: 70px; }
+.caseFocus .columnNavBlock .right .box .columnAllLink ul li{width: 180px;display: block;}
+.caseFocus .columnNavBlock .right .box .columnAllLink ul li a{ float: none; }
+/*下拉菜单*/
+.caseFocus .columnNavBlock .right .box .columnAllLink ul li.hnavmore ul { display: none; width: 180px; height: auto; position: relative; z-index: 9999; margin: 0px; }
+.caseFocus .columnNavBlock .right .box .columnAllLink ul li.hnavmore li { height: 26px; width: 100%; text-align: right; }
+.caseFocus .columnNavBlock .right .box .columnAllLink ul li.hnavmore li a { font-size: 16px; height: 26px; line-height: 32px; padding: 0; text-align: right; }
+.caseFocus .columnNavBlock .right .box .columnAllLink ul li.hnavmore:hover a {  }
+.caseFocus .columnNavBlock .right .box .columnAllLink ul li.hnavmore li a:hover { color: #000; }
+.caseFocus .columnNavBlock .right .box .columnAllLink ul li.hnavmore:hover ul { display: block; }
+
+/*>>left*/
+.caseFocus .columnNavBlock .left .box{ float: right; }
+.caseFocus .columnNavBlock .left .box .columnTitle p{ margin-left: 32px; }
+.caseFocus .columnNavBlock .left .box .columnTitle p.en{ font: 3.2em Arial; }
+.caseFocus .columnNavBlock .left .box .columnTitle p.cn{ font-size: 2.5em; margin-top: 5px; }
+/*>>>>>>>>>>*/
+.caseFocus .columnNavBlock .left .box .columnMenu{ height: 300px; margin-top: 55px; }
+.caseFocus .columnNavBlock .left .box .columnMenu a,
+.caseFocus .columnNavBlock .left .box .columnMenu:hover a{ text-decoration: none; }
+.caseFocus .columnNavBlock .left .box .columnMenu .bg{background: #000; filter: alpha(opacity=60); -moz-opacity: 0.6; opacity: 0.6; height: 300px;}
+.caseFocus .columnNavBlock .left .box .columnMenu .menuBlock{ height: 300px; position: relative; bottom: 300px; z-index: 1; }
+.caseFocus .columnNavBlock .left .box .columnMenu .menuBlock .icon{ background: url(../images/icon_003.png) no-repeat 0px 0px; height: 120px; width: 120px; display: block; margin: 45px 0% 0px 180px; }
+.caseFocus .columnNavBlock .left .box .columnMenu .menuBlock .text{ color: #fff; text-align: center; margin-top: 45px; }
+.caseFocus .columnNavBlock .left .box .columnMenu .menuBlock .text p.cn{ margin-bottom: 5px; font-size: 24px; }
+.caseFocus .columnNavBlock .left .box .columnMenu .menuBlock .text p.en{ font-size: 18px; }
+/*>>>>>>>>>>*/
+.caseFocus .columnNavBlock .left .box .columnMenu:hover .bg{background: #fff; filter: alpha(opacity=60); -moz-opacity: 0.6; opacity: 0.6; height: 300px;}
+.caseFocus .columnNavBlock .left .box .columnMenu:hover .menuBlock{ height: 300px; position: relative; bottom: 300px; z-index: 1; }
+.caseFocus .columnNavBlock .left .box .columnMenu:hover .menuBlock .icon{ background: url(../images/icon_003.png) no-repeat 0px -131px; height: 120px; width: 120px; display: block; margin: 45px 0% 0px 180px; }
+.caseFocus .columnNavBlock .left .box .columnMenu:hover .menuBlock .text{ color: #000; text-align: center; margin-top: 45px; }
+.caseFocus .columnNavBlock .left .box .columnMenu:hover .menuBlock .text p.cn{ margin-bottom: 5px; font-size: 24px; }
+.caseFocus .columnNavBlock .left .box .columnMenu:hover .menuBlock .text p.en{ font-size: 18px; }
+/*>>right*/
+.caseFocus .columnNavBlock .right .box{ float: left; }
+.caseFocus .columnNavBlock .right .box .columnAllLink a{ float: right; color: #fff; font-size: 20px; /*margin-top: 70px;*/ }
+.caseFocus .columnNavBlock .right .box .columnAllLink a:hover{ text-decoration: none; color: #000; }
+.caseFocus .columnNavBlock .right .box .columnAllLink a span{ padding-right: 20px; }
+/*>>>>>>>>>>*/
+.caseFocus .columnNavBlock .right .box{ float: left; }
+.caseFocus .columnNavBlock .right .box .columnTitle p{ margin-left: 32px; display: block; }
+.caseFocus .columnNavBlock .right .box .columnTitle p.en{ font: 3.2em Arial; }
+.caseFocus .columnNavBlock .right .box .columnTitle p.cn{ font-size: 2.5em; margin-top: 5px; }
+.caseFocus .columnNavBlock .right .box .columnMenu{ height: 300px; margin-top: 55px; }
+.caseFocus .columnNavBlock .right .box .columnMenu a,
+.caseFocus .columnNavBlock .right .box .columnMenuCurr a{ text-decoration: none; }
+.caseFocus .columnNavBlock .right .box .columnMenu .bg{background: #fff; filter: alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; height: 300px;}
+.caseFocus .columnNavBlock .right .box .columnMenu .menuBlock{ height: 300px; position: relative; bottom: 300px; z-index: 1; }
+.caseFocus .columnNavBlock .right .box .columnMenu .menuBlock .icon{ background: url(../images/icon_004.png) no-repeat 0px 0px; height: 120px; width: 120px; display: block; margin: 45px 0% 0px 180px; }
+.caseFocus .columnNavBlock .right .box .columnMenu .menuBlock .text{ color: #000; text-align: center; margin-top: 45px; }
+.caseFocus .columnNavBlock .right .box .columnMenu .menuBlock .text p.cn{ margin-bottom: 5px; font-size: 24px; }
+.caseFocus .columnNavBlock .right .box .columnMenu .menuBlock .text p.en{ font-size: 18px; }
+/*>>>>>>>>>>*/
+.caseFocus .columnNavBlock .right .box .columnMenu:hover .bg{background: #000; filter: alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; height: 300px;}
+.caseFocus .columnNavBlock .right .box .columnMenu:hover .menuBlock{ height: 300px; position: relative; bottom: 300px; z-index: 1; }
+.caseFocus .columnNavBlock .right .box .columnMenu:hover .menuBlock .icon{ background: url(../images/icon_004.png) no-repeat 0px -131px; height: 120px; width: 120px; display: block; margin: 45px 0% 0px 180px; }
+.caseFocus .columnNavBlock .right .box .columnMenu:hover .menuBlock .text{ color: #fff; text-align: center; margin-top: 45px; }
+.caseFocus .columnNavBlock .right .box .columnMenu:hover .menuBlock .text p.cn{ margin-bottom: 5px; font-size: 24px; }
+.caseFocus .columnNavBlock .right .box .columnMenu:hover .menuBlock .text p.en{ font-size: 18px; }
+
+/*list*/
+.caseList{  width:100%; }
+.caseList ul{min-height: 300px; display: block;height: auto;}
+.caseList ul li{ float: left; height: 300px; width: 25%;*width: 24.9%; display: block;}
+.caseList ul li a{ display: block; height: 300px; width: 100%; }
+.caseList ul li a:hover{ text-decoration: none; }
+.caseList ul li a img{ width: 100%; }
+.caseList ul li a .bg{ width: 100%; height: 300px; background: #000; position: relative; bottom: 304px;*bottom: 300px; z-index: 1; filter: alpha(opacity=60); -moz-opacity: 0.6; opacity: 0.6;transition: all 0.3s linear;}
+.caseList ul li a:hover .bg{filter: alpha(opacity=0); -moz-opacity: 0; opacity: 0;}
+.caseList ul li a .mark{ z-index: 5; position: relative; color: #fff; width: 100%; height: 50px; bottom: 380px; display: none; padding-left: 20px; }
+.caseList ul li a .mark h3{ font-size: 22px; padding-bottom: 5px; font-weight: normal; }
+.caseList ul li a .mark p{ font-size: 16px; }
+.caseList ul li a:hover .mark{display:block;}
+/*>>page*/
+.casePage{ border-bottom: 1px solid #fff; height: 170px; background: #000; }
+.casePage .pageBox{ text-align: center; height: 12px; padding-top: 70px; line-height: 12px; font-size:0px;}
+.casePage .pageBox span:last-child{margin-right: 0px;}
+.casePage .pageBox a:last-child{margin-right: 0px;}
+.casePage .pageBox span.current{ 
+	background: #b3b3b3; display: inline-block; height: 12px; width: 12px; margin-right: 58px; 
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	font-size:0px;
+	color:#b3b3b3;
+}
+.casePage .pageBox a.num{
+	background: #666; display: inline-block; height: 8px; width: 8px;margin-right: 58px; 
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 10px;
+	font-size:0px;
+	color:#666;
+}
+.casePage .pageBox a:hover.num{background: #b3b3b3;font-size:0px;color:#b3b3b3;}
+
+
+/*======case show======*/
+/* body */
+.caseShowHeader{ height: 105px; margin-top: 45px; }
+.caseShowHeader #logo{ background: url(../images/logo_ash.gif) no-repeat center center; height: 46px; width: 193px; float: left; margin-top: 59px; }
+.caseShowHeader a.gotohome{ background: url(../images/gotohome.png) no-repeat 0px 0px; float: right; height: 105px; width: 105px; display: block; /*transition: background 0.3s linear;*/}
+.caseShowHeader a:hover.gotohome{ background: url(../images/gotohome.png) no-repeat 0px -115px;}
+/*>>content*/
+.caseShowContent{ margin: 100px 0px 50px; }
+.caseShowContent .cover{ float: left; max-width: 480px; min-height:632px; }
+.caseShowContent .content{ color: #4e4e4e; float: left; margin-left: 90px; width: 410px; }
+.caseShowContent .content .title{ text-align: right; }
+.caseShowContent .content .title h1{ font-weight: normal; font-size: 2.6em; display: block; }
+.caseShowContent .content .title p{ font-size: 18px; margin-top: 5px; }
+.caseShowContent .content .summary{ margin-top: 35px; font-size: 16px; line-height: 30px; }
+.caseShowContent .content .article{ font-size: 14px; margin-top: 65px; }
+.caseShowContent .content .article p{ padding-top: 35px; line-height: 25px; }
+/*>>pic item*/
+.picItem{ margin-bottom: 100px; text-align: center;}
+.picItem p{ padding-top: 40px; }
+.picItem p img{ max-width: 980px; min-height:564px; }

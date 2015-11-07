@@ -1,0 +1,143 @@
+/*
+*==文件名：main.css
+*==作用:后台页面样式控制
+*==编写时间：2014-07-10
+*==编写：伯德梦想www.bodecn.net
+*/
+
+/* 全局样式 */
+body,td,th { font-family: "\5FAE\8F6F\96C5\9ED1", Arial; font-size: 14px; color: #555; }
+body { margin: 0px; background-color: #ededef; }
+ul,li,dl,dt,dd,p,h1,h2,h3,h5,form,label,button{ margin: 0px; padding: 0px; list-style: none; }
+img{ border:none;}
+label,input,button,textarea,select{vertical-align: middle;border:none;outline: none;font-family: "\5FAE\8F6F\96C5\9ED1", Arial;font-size:12px;color: #555;}
+button{ cursor: pointer; display: inline-block;}
+button:disabled,button[disabled],
+button:disabled:hover,button[disabled]:hover{background: #f5f5f5; color: #ACA899; cursor:default;}
+input:disabled,input[disabled]{ color: #999; border: 1px solid #ddd; background: #eee; }
+a{ color: #555; text-decoration: none; }
+a:hover{ color: #fd5f56; }
+
+/*公用样式*/
+.wrapper{ padding: 10px; }
+.clear{display:block;height:0;overflow:hidden;clear:both;}
+.clearfix:after{content:'\20';display:block;height:0;clear:both;}
+.clearfix{*zoom:1;}
+
+/*分割线*/
+.line{ border-bottom: 1px solid #ddd; height: 1px; margin-bottom:20px; }
+
+/*表单样式*/
+input.text{ border: 1px solid #ddd; background: #fff; line-height: 24px; padding: 2px 5px; height: 24px; }
+input.text:focus{ background: #FFFFCA; }
+textarea.text{ border: 1px solid #ddd; background: #fff; line-height: 24px; padding: 2px 5px; height: 24px; }
+textarea.text:focus{ background: #FFFFCA; }
+select.text{ height: 28px; line-height: 24px; padding: 4px 5px 2px 0px; border: 1px solid #ddd; }
+select.text:focus{ background: #FFFFCA; }
+
+/*按钮样式*/
+.btn1{ background: #fd5f56; color: #fff; padding: 2px 5px; }
+.btn1:hover{ background: #FD2D22; }
+
+.btn2{ background: #fd5f56; color: #fff; width:100px; height:40px; }
+.btn2:hover{ background: #FD2D22; }
+
+.btn3{ background: #fd5f56; color: #fff; width:80px; height:28px; }
+.btn3:hover{ background: #FD2D22; }
+
+/*图片样式*/
+.img1{ border: 1px solid #ddd; }
+
+/*提示信息样式*/
+.msg1{ color: #c00; padding-left: 5px; font: 12px "\5B8B\4F53", Arial; }
+
+/*标签样式*/
+.tagBox1{ color: #fff; font-size: 12px; font-weight: bold; text-align: center; padding: 4px 8px; background: #5cb85c; } /*绿色*/
+.tagBox2{color: #fff; font-size: 12px; font-weight: bold; text-align: center; padding: 4px 8px; background: #d9534f;} /*红色*/
+.tagBox3{color: #fff; font-size: 12px; font-weight: bold; text-align: center; padding: 4px 8px; background: #f0ad4e;} /*黄色*/
+.tagBox4{color: #fff; font-size: 12px; font-weight: bold; text-align: center; padding: 4px 8px; background: #777;} /*灰色*/
+
+
+/*当前位置*/
+.pageCurrent{ background: #fff; border-bottom: 1px solid #ccc; height: 40px; line-height: 40px; padding-left: 10px; width:100%; }
+.pageCurrent a{ color: #555; text-decoration: none; }
+.pageCurrent a:hover{ color: #fd5f56; }
+.pageCurrent span{ padding: 0px 5px; }
+
+/*固定当前位置*/
+/* 默认时的样式 */ 
+#sidebar{} 
+/* 加载 Portamento 成功后的样式 */ 
+#portamento_container{ position: absolute; z-index: 99; } 
+#portamento_container #sidebar{} 
+/* 滑动时的样式 */ 
+#portamento_container #sidebar.fixed{position:fixed;}
+
+/*主体*/
+.main{ margin-top: 40px; }
+
+/*tab 表格页*/
+.main .headTab{ background: #fee3e2; border-bottom: 1px solid #ccc; margin-bottom: 10px; padding-left: 10px; height: 50px; display: block; }
+.main .headTab li{ float: left; display: block; height: 35px; line-height: 35px; margin-top: 15px; padding: 0px 14px; }
+.main .headTab li a{color: #555; text-decoration: none;}
+.main .headTab li a:hover{color: #555;}
+.main .headTab li.on{ background: #fff; border-top: 1px solid #ccc; border-right: 1px solid #ccc; border-left: 1px solid #ccc; font-weight: bold; }
+
+/*tab 表单页*/
+.main .headTabs{ background: #fee3e2; height: 50px; padding-left: 10px; border-top: 2px solid #fd5f56; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; }
+.main .headTabs li{ float: left; display: block; height: 35px; line-height: 35px; margin-top: 15px; padding: 0px 14px; }
+.main .headTabs li a{color: #555; text-decoration: none;}
+.main .headTabs li a:hover{color: #555;}
+.main .headTabs li.on{ background: #fff; border-top: 1px solid #ccc; border-right: 1px solid #ccc; border-left: 1px solid #ccc; font-weight: bold; }
+
+/*表格样式*/
+.main .tableBox{}
+.main .tableBox>.table{ border-top: 2px solid #fd5f56; border-left: 1px solid #ccc; }
+.main .tableBox>.table th{ background: #fee3e2; font-size: 12px; line-height: 30px; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.main .tableBox>.table td{ background: #fff; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 5px; }
+.main .tableBox>.table td.center{ text-align:center; }
+.main .tableBox>.table td.left{ text-align:left; }
+.main .tableBox>.table td.right{ text-align:right; }
+
+/*表单区域*/
+.form{ background: #fff; padding: 10px; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; }
+.form .tr{ margin-bottom: 20px; min-height: 30px; }
+.form .tr .col{ min-height: 30px; float: left; vertical-align: middle; min-width: 85px; text-align: right; }
+.form .tr .td{ min-height: 30px; }
+.form .tr .td span.helpBlock{ color: #999; padding-left: 10px; font: 12px "\5B8B\4F53"; }
+/*.helpBlock{ color: #999; padding-left: 10px; font: 11px "\5B8B\4F53"; }*/
+
+/*查询区域*/
+.search{ border: 1px solid #ccc; background: #fff; padding: 10px; margin: 0px 0px 10px; }
+.search table{ border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+.search table td{ padding: 5px; border-top: 1px solid #ccc; border-left: 1px solid #ccc; }
+
+/*分页  thinkphp专用分页样式*/
+.page{ height: 38px; margin-top: 20px; }
+.page{float:right;}
+.page div>span.current{display: block; float: left; height: 36px; width: 36px; line-height: 36px; text-align: center; margin-right: 5px; border: 1px solid #fd5f56; background: #fd5f56; color: #fff;}
+.page div>.num,
+.page div>.prev,
+.page div>.next,
+.page div>.first,
+.page div>.end{display: block; float: left; height: 36px; width: 36px; line-height: 36px; text-align: center; margin-right: 5px; border: 1px solid #ccc; background: #fff;transition: background-color 0.3s ease 0s;}
+.page div>.prev,.page div>.next{width: 50px;}
+.page div>.num:hover,
+.page div>.prev:hover,
+.page div>.next:hover,
+.page div>.first:hover,
+.page div>.end:hover{background: #fd5f56;color: #fff;border: 1px solid #fd5f56;}
+
+/*.page{ height: 38px; margin-top: 20px; }
+.page ul{ float:right;}
+.page ul li{ display: block; float: left; height: 36px; width: 36px; line-height: 36px; text-align: center; margin-right: 5px; border: 1px solid #ccc; background: #fff;transition: background-color 0.3s ease 0s;}
+.page ul li a{ color: #555; text-decoration: none; height: 36px; width: 36px; line-height: 36px;display: block; transition: background 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 0s;}
+.page ul li.current{ background: #fd5f56; border: 1px solid #fd5f56; margin-top: 0px; height: 36px; width: 36px; color: #fff; }
+.page ul li.current a{color: #fff;}
+.page ul li.current a:hover{color: #fff;}
+.page ul li:hover{background: #fd5f56;color: #fff;border: 1px solid #fd5f56;}
+.page ul li:hover a{color: #fff;}
+.page li.prev a{ background:url(../images/icon_005.png) no-repeat 0px -36px; }
+.page li.prev a:hover{ background-position:-36px -36px; }
+.page li.next a { background: url(../images/icon_005.png) no-repeat -36px 0px; }
+.page li.next a:hover{ background-position:0px 0px; }*/

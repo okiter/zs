@@ -1,0 +1,30 @@
+/*======contact 联系我们======*/
+/* focus */
+.contactFocus{ height: 800px; background: url(../images/contact/focus.jpg) no-repeat center center; }
+/*>>contact*/
+.contactBlock{ padding-top: 250px; }
+.contactBlock .columnTitle{ color: #fff; height: 105px; }
+.contactBlock .columnTitle p{ display: block; }
+.contactBlock .columnTitle p.en{ font: 3.8em Arial; }
+.contactBlock .columnTitle p.cn{ font-size: 2.8em; }
+.contactBlock .content{ margin-top: 65px; color: #fff; font-size: 20px; line-height: 34px; }
+
+/* reservation 预约 */
+.reservationColumnTitle{ color: #000; margin-top: 55px; }
+.reservationColumnTitle p{display: block;}
+.reservationColumnTitle p.en{ font: 3.8em Arial; }
+.reservationColumnTitle p.cn{ font-size: 2.8em; }
+/*>>>>>>>>>>*/
+.reservationForm{ margin: 55px 0px 180px; }
+.reservationForm table{ margin: 0px; padding: 0px; border: none; }
+.reservationForm table td{ padding-bottom: 28px; }
+.reservationForm table td:last-child{ padding-bottom: 0px; }
+.reservationForm table td label{ font-size: 24px; color: #a3a3a3; margin-right: 50px; }
+.reservationForm table td input{ background: #e5e5e5; border: 1px solid #ccc; height: 50px; line-height: 50px; padding: 0px 5px; font-size: 16px; color: #666; }
+.reservationForm table td.right{ width: 255px; }
+.reservationForm table td.right .sexLable{ margin: -19px 0px 0px;*margin: 0px 0px 0px; float: left; display: inline-block; }
+.reservationForm table td.right .selectBox{ background: #e5e5e5; height: 28px; width: 28px; float: left; border: 1px solid #ccc; margin: -15px 10px 0px 5px; *margin: 0px 10px 0px 5px; cursor:pointer;}
+.reservationForm .btn{ margin-top: 108px; text-align: center; }
+.reservationForm .btn button{ height: 96px; width: 306px; border: 1px solid #b2b2b2; background: #ccc; color: #fff; font: 36px \5FAE\8F6F\96C5\9ED1; }
+.reservationForm .btn button:hover{background: #FC6;}
+.reservationForm .btn span{ font-size: 18px; color: #585858; padding: 0px 0px 0px 10px; }

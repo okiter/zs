@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>馨嘉达装饰 - 联系我们</title>
+<link href="__CSS__/main.css" rel="stylesheet" />
+<link href="__CSS__/contact.css" rel="stylesheet" />
+</head>
+
+<body>
+<!-- header start -->
+<div class="wrapper header" >
+	<div id="logo"><a href="#" title="嘉馨达装饰"></a></div>
+	<ul class="mainNav">
+		<li><a href="/">首页</a></li>
+		<li><a href="case.html">案例展示</a></li>
+		<li><a href="gongyi.html">工艺展示</a></li>
+		<li><a href="activity.html">最新活动</a></li>
+		<li><a href="progres.html">进度查询</a></li>
+		<li><a href="about.html">关于我们</a></li>
+		<li><a href="job.html">人才招聘</a></li>
+		<li class="current"><a href="contact.html">联系我们</a></li>
+	</ul>
+	<ul class="toolbar">
+		<li class="tel"><a href="#"></a></li>
+		<li class="email"><a href="#"></a></li>
+		<li class="qq"><a href="#"></a></li>
+	</ul>
+</div>
+<!-- header end -->
+
+<!-- focus start -->
+<div class="contactFocus">
+	<div class="wrapper980">
+		<div class="contactBlock">
+			<div class="columnTitle">
+				<p class="en">Contact Us</p>
+				<p class="cn">联系我们</p>
+			</div>
+			<div class="content">Tel：028-84700028&nbsp;&nbsp;|<br />E-mail：1158753448@qq.com&nbsp;&nbsp;|<br />Add：成都市锦江区静沙南路18号A座11楼01-03号&nbsp;&nbsp;|</div>
+		<div class="clear"></div>
+		</div>
+	<div class="clear"></div>
+	</div>
+</div>
+<!-- focus end -->
+
+<!-- 预约 start -->
+<div class="wrapper" style="background:#fff;" id="reservationMake">
+	<div class="wrapper980">
+		<div class="reservationColumnTitle">
+			<p class="en">Make An Appointment</p>
+			<p class="cn">装修预约</p>
+		</div>
+		<!--form-->
+		<div class="reservationForm">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<form action="" method="post" name="reservation" id="reservation">
+				<tr>
+					<td><label>姓<span style="padding-right:2em;"></span>名</label><input type="text" name="rname" id="rname" value="" style="width:412px;" /></td>
+					<td valign="middle" class="right">
+						<label class="sexLable">先生</label>
+						<span class="selectBox" data-val="1"></span>
+						<label class="sexLable">女士</label>
+						<span class="selectBox" data-val="2"></span>
+						<input type="hidden" name="rsex" id="rsex" value="" />
+					</td>
+				</tr>
+				<tr>
+					<td><label>联系电话</label><input type="text" name="rtel" id="rtel" value="" style="width:412px;" /></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2"><label>地<span style="padding-right:2em;"></span>址</label><input type="text" name="radd" id="radd" value="" style="width:820px;" /></td>
+				</tr>
+				</form>
+			</table>
+			<div class="btn">
+				<button type="button" name="btn" id="btn">现在预约</button>
+				<span>预约成功后我们会尽快与您联系，谢谢！</span>
+			</div>
+		</div>
+	<div class="clear"></div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- 预约 end-->
+
+<!-- footer start -->
+<div class="wrapper footer">
+	<ul class="left">
+		<li>
+			<p class="title">联系我们&nbsp;·&nbsp;CONTACT US</p>
+			<p class="link">Tel：028-84700028<span>|</span>E-mail：1158753448@qq.com<span>|</span>Add：成都市锦江区静沙南路18号A座11楼01-03号</p>
+		</li>
+		<li>
+			<p class="title">相关分享 · LEGAL NOTICES</p>
+			<p class="link"><a href="#">微信</a><a href="#">微博</a><a href="#">二维码</a></p>
+		</li>
+	</ul>
+	<div class="right">
+		<p class="copy">版权所有：Copyright © 2014 The INGO BK Company</p>
+		<p class="nav"><a href="#">网站首页</a><span>|</span><a href="#">产品中心</a><span>|</span><a href="#">网站导航</a><span>|</span><a href="contact.html">联系我们</a></p>
+	</div>
+</div>
+<!-- footer end -->
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+$(function(){
+	//单选框操作
+	$('.selectBox').each(function() {
+		$(this).click(function(){
+			var v = $(this).attr('data-val');
+			$('#rsex').val(v);
+			if(v==$('#rsex').val()){
+				$(this).css('background','#FC6');
+				$(this).prevAll().removeAttr('style');
+				$(this).nextAll().removeAttr('style');
+			}
+		});
+	});
+	
+	//表单验证
+	$('#btn').click(function(){
+		var rname = $('#rname').val();
+			rsex = $('#rsex').val();
+			rtel = $('#rtel').val();
+			radd = $('#radd').val();
+		if(rname==''){
+			alert('请填写您的姓名');
+			return false;
+		}else if(rsex==''){
+			alert('请选择性别');
+			return false;
+		}else if(rtel==''){
+			alert('请填写您的联系电话');
+			return false;
+		}else if(radd==''){
+			alert('请填写您的联系地址');
+			return false;
+		}else{
+			$('#reservation').submit();
+			return true;
+		}
+	});
+});
+</script>
+</html>

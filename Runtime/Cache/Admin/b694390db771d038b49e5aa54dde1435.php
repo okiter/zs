@@ -1,0 +1,103 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="http://www.zs.com/Public/Admin/css/main.css" rel="stylesheet" />
+<link rel="stylesheet" href="../../plug/edit/themes/default/default.css" />
+<script charset="utf-8" src="../../plug/edit/kindeditor.js"></script>
+<script charset="utf-8" src="../../plug/edit/lang/zh_CN.js"></script>
+</head>
+<body>
+<!--当前位置-->
+<div class="pageCurrent" id="sidebar">
+	<strong>您的当前位置：</strong><a href="#" target="_parent">管理后台</a><span>&gt;&gt;</span>系统设置<span>&gt;&gt;</span>轮播图片
+</div>
+<!--END 当前位置-->
+
+<div class="wrapper">
+	<!--主体-->
+	<div class="main">
+		<!--tab-->
+		<ul class="headTabs">
+			<li><a href="list.html">图片列表</a></li>
+			<li class="on"><a href="#">添加图片</a></li>
+		</ul>
+		
+		<!--form-->
+		<div class="form">
+			<form action="" method="post">
+			<div class="tr">
+				<div class="col">上传图片：</div>
+				<div class="td"><img src="http://usr.im/300x125" id="picurl" class="img1" style="width:300px; height:125px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<input name="focus_picurl" type="hidden" class="add" id="focus_picurl" style="width:200px;" value="" />
+					<button type="button" class="btn3" id="picurl_btn">选择图片</button><span class="helpBlock">图片尺寸 宽：1920像素，高：800像素</span>
+				</div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">大标题：</div>
+				<div class="td"><input type="text" id="focus_title" name="focus_title" value=""  class="text" style="width:300px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">小标题：</div>
+				<div class="td"><input type="text" id="focus_subtitle" name="focus_subtitle" value=""  class="text" style="width:300px;" /></div>
+			</div>
+			
+			<div class="tr">
+				<div class="col">图片状态：</div>
+				<div class="td">
+					<input type="radio" name="focus_status" id="focus_status1" value="1" checked="checked"/><label for="focus_status1">正常</label>
+					<input type="radio" name="focus_status" id="focus_status0" value="0"/><label for="focus_status0">停用</label>
+				</div>
+			</div>
+			
+			<div class="tr">
+				<div class="col"></div>
+				<div class="td">
+					<button type="submit" class="btn2">保<span style="padding-right:2em;"></span>存</button>
+				</div>
+			</div>
+			</form>
+		<div class="clear"></div>
+		</div>
+		<!--END form-->
+	<div class="clear"></div>
+	</div>
+	<!--END 主体-->
+<div class="clear"></div>
+</div>
+</body>
+<script src="http://www.zs.com/Public/Admin/js/jquery.min.js?1.8.3"></script>
+<script src="http://www.zs.com/Public/Admin/js/common.js"></script>
+<script src="http://www.zs.com/Public/Admin/js/portamento-min.js"></script>
+<script>
+KindEditor.ready(function(K) {
+	var thumbnail = K.editor({
+		basePath: '../../plugPublic/edit/'
+		,uploadJson : '../../plugfileup/upload_json.php?m=article&imageDir=thumbnail&fileSize=1'
+		,uploadDir : 'thumbnail'	//图片保存目录名 get参数 carData=>模型名 imageDir => 图片保存目录 fileSize => 允许上传的文件大小
+		,fileManagerJson : '../../plug/fileup/file_manager_json.php?m=article&imageDir=thumbnail'
+		,uploadDirName : 'thumbnail'
+		,allowFileManager:true
+	});
+	K('#picurl_btn').click(function() {
+		thumbnail.loadPlugin('image', function() {
+			thumbnail.plugin.imageDialog({
+				imageUrl : K('#focus_picurl').val(),
+				clickFn : function(url, title, width, height, border, align) {
+					K('#focus_picurl').val(url);
+					K('#picurl').attr('src',url);
+					thumbnail.hideDialog();
+				}
+			});
+		});
+	});
+});
+</script>
+</html>

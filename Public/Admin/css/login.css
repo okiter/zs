@@ -1,0 +1,38 @@
+/*
+*==文件名：login.css
+*==作用:网站管理后台登陆页面样式
+*==编写时间：2014-10-15
+*==编写：伯德梦想www.bodecn.net zk
+*/
+html {
+   background: url(../images/login_bg.png) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   width:100%;
+}
+body{ margin:0px; padding:0px; font-family:"微软雅黑";}
+ul,p,li{ margin:0px; padding:0px;}
+ul,li{ list-style-type:none;}
+.clear{ width:100%; height:5px; clear:both; visibility: hidden}
+
+.clear{display:block;height:0;overflow:hidden;clear:both;}
+.clearfix:after{content:'\20';display:block;height:0;clear:both;}
+.clearfix{*zoom:1;}
+
+.loginBox{ margin: 10% auto 0px; width: 500px; }
+.loginBox #logo{ height: 90px; background: url(../images/login_logo.png) no-repeat center center; }
+.loginBox .form{margin-top: 20px; }
+.loginBox .form #inputBox{ }
+.loginBox .form #inputBox table{ font-size: 14px; color: #333; margin-left: 20%; }
+.loginBox .form #inputBox table td{ padding: 5px; }
+.loginBox .form #inputBox table td.left{ text-align: left; }
+.loginBox .form #inputBox table td.right{ text-align: right; }
+.loginBox .form #inputBox table td .vimg{ margin: 0px; padding: 0px; vertical-align: middle; display: inline-block; width: 80px; height: 30px; cursor:pointer; }
+.loginBox .form #inputBox label{ line-height: 30px; vertical-align: bottom; height: 30px; color: #555; font-size: 14px; }
+.loginBox .form #inputBox input{ height: 30px; border-style: none; margin: 0px; padding: 2px 5px; color: #555; font: 14px/30px "微软雅黑"; }
+
+.loginBox .form #btn{ margin: 20px 0px 0px 34%; }
+.loginBox .form #btn button{ background: #fd5f56; height: 32px; width: 120px; color: #fff; padding: 0px; margin: 0px; border-radius: 4px; border: none; cursor: pointer; font: 14px "微软雅黑"; transition: background-color 0.3s ease 0s; }
+.loginBox .form #btn button:hover{background: #FD2D22;}
